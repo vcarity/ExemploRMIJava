@@ -13,6 +13,7 @@ public class CalcServer {
         ICalc stub = (ICalc) UnicastRemoteObject.exportObject(calc, 6677);
         Registry registry = LocateRegistry.createRegistry(30000);
         registry.rebind("calculadora", stub);
+        System.out.println("Esperando chamadas...");
     }
     
 }
